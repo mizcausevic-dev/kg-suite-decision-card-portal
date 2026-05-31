@@ -1,0 +1,21 @@
+{
+  "contract_id": "STRATOS-VAULT-GUARDIANAI-2026Q4",
+  "schema_version": "0.1",
+  "ai_system": { "name": "VendorD GuardianAI", "version": "3.x", "ai_tool_card_url": "https://vendord-guardianai.example/.well-known/ai-tool-cards/guardianai-3.x.json" },
+  "data_vault_targets": [
+    { "target_id": "vault-azgov-cui", "vault_provider": "azure-government", "vault_tier": "encryption-at-rest-keyed", "fields_tokenized_or_held": ["rfp_solicitation_number","cage_code","personnel_clearance_id"], "fips_140_validated": true, "fedramp_authorized": true },
+    { "target_id": "vault-skyflow-tdp", "vault_provider": "skyflow", "vault_tier": "tokenization-only", "fields_tokenized_or_held": ["technical_data_package_id","weapon_system_program_id"], "fips_140_validated": true, "fedramp_authorized": false }
+  ],
+  "retention_envelope": { "default_retention_days": 2555, "legal_hold_supported": true, "destruction_method": "nist-sp-800-88-purge" },
+  "axis_policies": {
+    "cui_handling_policy": { "PUBLIC": {}, "CUI-BASIC": {}, "CUI-SPECIFIED": {}, "CUI-SPECIFIED-NOFORN": {}, "CONTROLLED-NOFORN": {}, "CLASSIFIED-CONFIDENTIAL": {}, "CLASSIFIED-SECRET": {}, "CLASSIFIED-TOP-SECRET": {}, "SCI": {} },
+    "export_control_handling_policy": { "NOT-EXPORT-CONTROLLED": {}, "EAR-99": {}, "EAR-CCL-RESTRICTED": {}, "ITAR": {} },
+    "foreign_person_handling_policy": { "US-PERSON-ONLY": {}, "AUTHORIZED-FOREIGN-PERSON-WITH-LICENSE": {}, "FIVE-EYES-ONLY": {}, "NATO-PLUS-ONLY": {}, "NO-RESTRICTION": {} }
+  },
+  "cross_binding_refs": {
+    "defense_decision_record_audit_stream_repo": "https://github.com/mizcausevic-dev/defense-decision-record-audit-stream",
+    "cmmc_l2_l3_readiness_evidence_bundle_repo": "https://github.com/mizcausevic-dev/cmmc-l2-l3-readiness-evidence-bundle",
+    "defense_ai_incident_card_profile_repo": "https://github.com/mizcausevic-dev/defense-ai-incident-card-profile"
+  },
+  "signature": "ed25519:fake_signature_for_demo"
+}

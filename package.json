@@ -1,0 +1,15 @@
+{
+  "name": "kg-suite-decision-card-portal",
+  "version": "0.1.0",
+  "description": "Buyer-facing static HTML viewer for AI Procurement Decision Cards. Drop in a Decision Card URL → renders a procurement-review-friendly summary: data tiers · retention envelope · vault contract type · signature verified status · 3-axis posture (if DefenseTech). Deploys to decisions.kineticgain.com. Replaces 'read raw JSON' for non-engineer reviewers.",
+  "type": "module",
+  "main": "src/render.mjs",
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "demo": "node src/build-demo.mjs"
+  },
+  "license": "MIT",
+  "homepage": "https://decisions.kineticgain.com",
+  "repository": { "type": "git", "url": "git+https://github.com/mizcausevic-dev/kg-suite-decision-card-portal.git" },
+  "keywords": ["kinetic-gain-protocol-suite", "decision-card", "viewer", "procurement", "static-site"]
+}
